@@ -1,0 +1,22 @@
+
+
+.alinhamento{
+  text-align:right;
+  margin-right: 30px;
+}
+
+.fontedestaque{
+font-family: 'Roboto', sans-serif;
+font-style: italic;
+text-align: center;
+}
+
+.fontecorpo{
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+}
+
+.navdestaque{
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+}
