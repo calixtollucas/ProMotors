@@ -1,30 +1,51 @@
-class Cliente {
 
+//classes
+class Cliente{
     #nomeUsuario;
-
-    constructor(nomeUsuario, senha, email){
+    #email;
+    #senha;
+    constructor(nomeUsuario, email, senha){
         this.#nomeUsuario = nomeUsuario,
-        this.senha = senha,
-        this.email = email
+        this.#email = email,
+        this.#senha = senha
     }
 
+    //getters and setters
     get getNomeUsuario(){
-        return this.nomeUsuario;
+        return this.#nomeUsuario;
+    }
+    get getEmail(){
+        return this.#email;
+    }
+    get getSenha(){
+        return this.#senha;
     }
 }
+//variavéis
+const clientes = [];
+const c1 = new Cliente('Lucas','lucas@gmail.com','1234');
+const c2 = new Cliente('Arthur', 'arthur@gmail.com','5678')
+const c3 = new Cliente('Dayanne','day@gmail.com','1432');
+const c4 = new Cliente('AnnaKlara','klara@gmail.com','1234');
+const form = document.querySelector('form#formLogin');
+const nomeUsuario = document.getElementById('loginUsu');
+const senhaUsuario = document.getElementById('loginSenha');
 
-let clientes = [];
-document.getElementById('btnSubmit').addEventListener("click", validaLogin())
+clientes.push(c1);
+clientes.push(c2);
+clientes.push(c3);
+clientes.push(c4);
 
-const administrator = new Cliente('Admin','admin','admin@gmail.com');
-clientes.push(administrator);
+form.addEventListener('submit', e =>{
+    e.preventDefault();
+    let nomeValue = nomeUsuario.value;
+    let senhaValue = senhaUsuario.value;
 
+    clientes.forEach(element => { 
+        if((nomeValue == element.getNomeUsuario || nomeValue == element.getEmail) && senhaValue == element.getSenha){
+            alert('logado com sucesso!');
+        }
+    });
 
-
-function validaLogin(){
-    let usuario = document.getElementById('loginUsu');
-
-    if (clientes.length>0) {
-        console.log(toString(usuario.value) == clientes[0].getNomeUsuario())
-    }
-}
+    window.location.href = 'index.html';
+})
