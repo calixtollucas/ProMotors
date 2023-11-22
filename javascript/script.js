@@ -45,8 +45,28 @@ const clientes = [];
 
 //--CADASTRO--
 //variáveis
-const formCad = document.querySelector('form#cadForm');
+const cadForm = document.querySelector('form#formCad');
+const cadNome = document.querySelector('input#cadNome');
+const cadSobrenome = document.querySelector('input#cadSobrenome');
+const cadSexo = document.querySelector('input#cadSexo');
+const cadEmail = document.querySelector('input#cadEmail');
+const cadSenha = document.querySelector('input#cadSenha');
+const cadConSenha = document.querySelector('input#cadConSenha');
+const cadEstado = document.querySelector('input#cadEstado');
+const cadCidade = document.querySelector('input#cadCidade');
 
+cadForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+
+    alert(cadNome.value)
+
+    if(cadNome.value){
+        clientes.push(new Cliente(cadNome.value, cadSobrenome.value, cadSexo.value, cadEstado.value, cadCidade.value, cadEmail.value, cadSenha.value));
+    }
+
+
+    console.log(clientes[0])
+})
 
 //--LOGIN--
 //variavéis

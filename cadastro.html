@@ -40,25 +40,25 @@
       </nav>
 
       <!--Formulário de cadastro-->
-      <div class="container d-block mx-auto" style="background-color: red;">
+      <div class="container d-block mx-auto">
         
             <div class="card p-4 w-75 mx-auto">
-                <form id="cadForm" class="row">
+                <form action="#" id="formCad" class="row g-3">
                     <!--Nome-->
                     <div class="col-5">
                         <label for="cadNome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="cadNome">
+                        <input required aria-describedby="cadNome" type="text" class="form-control" id="cadNome">
                     </div>
                     <!--Sobrenome-->
                     <div class="col-5">
                         <label for="" class="form-label">Sobrenome</label>
-                        <input type="text" class="form-control" id="cadSobrenome">
+                        <input required aria-describedby="cadSobrenome" type="text" class="form-control" id="cadSobrenome">
                     </div>
                     <!--sexo-->
                     <div class="col-2">
-                        <label for="" class="form-label">Sexo</label>
-                        <select class="form-select" id="cadSexo">
-                            <option value="#" active></option>
+                        <label for="cadSexo" class="form-label">Sexo</label>
+                        <select required class="form-select" id="cadSexo">
+                            <option selected disabled value="">Selecione</option>
                             <option value="M">Masculino</option>
                             <option value="F">Feminino</option>
                             <option value="O">Outro</option>
@@ -66,23 +66,24 @@
                     </div>
                     <!--Email-->
                     <div class="col-12">
-                        <label for="" id="cadEmail" class="form-label">Email</label>
-                        <input type="text" class="form-control">
+                        <label for="cadEmail" class="form-label">Email</label>
+                        <input required aria-describedby="cadEmail" type="text" id="cadEmail" class="form-control">
                     </div>
                     <!--Senha-->
                     <div class="col-6">
-                        <label for="" id="cadSenha" class="form-label">Senha</label>
-                        <input type="text" class="form-control">
+                        <label for="cadSenha" class="form-label">Senha</label>
+                        <input required aria-describedby="cadSenha" type="text" id="cadSenha" class="form-control">
                     </div>
                     <!--Confirmar Senha-->
                     <div class="col-6">
-                        <label for="" id="cadConSenha" class="form-label">Confirmar Senha</label>
-                        <input type="text" class="form-control">
+                        <label for="cadConSenha" class="form-label">Confirmar Senha</label>
+                        <input required aria-describedby="cadCidade" type="text" id="cadConSenha" class="form-control">
                     </div>
                     <!--Estado-->
                     <div class="col-2">
                         <label for="cadEstado" class="form-label">Estado</label>
-                        <select name="cadEstado" id="cadEstado" class="form-select">
+                        <select required name="cadEstado" id="cadEstado" class="form-select">
+                            <option selected disabled value="">Selecione o estado</option>
                             <option value="Acre">Acre</option>
                             <option value="Alagoas">Alagoas</option>
                             <option value="Amapá">Amapá</option>
@@ -114,16 +115,16 @@
                     </div>
                     <!--Cidade-->
                     <div class="col-10">
-                        <label for="" class="form-label">Cidade</label>
-                        <input type="text" class="form-control" id="cadCidade">
+                        <label for="cadCidade" class="form-label">Cidade</label>
+                        <input required aria-describedby="cadCidade" type="text" class="form-control" id="cadCidade">
                     </div>
                     <div class="col-auto d-block mx-auto mt-5">
-                        <button type="submit" id="btnCad" class="btn btn-dark" style="height: 50px; font-family: poppins;">Criar Conta</button>
+                        <button id="btnCad" class="btn btn-dark" type="submit" style="height: 50px; font-family: poppins;">Criar Conta</button>
                     </div>
                 </form>
             </div>
-        
       </div>
 
+      <script src="javascript/script.js"></script>
 </body>
 </html>
