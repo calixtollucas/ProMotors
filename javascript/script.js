@@ -10,10 +10,10 @@ class Cliente{
     #senha;
     constructor(nome, sobrenome, sexo, estado, cidade, email, senha){
         this.#nome = nome,
-        this.sobrenome = sobrenome,
-        this.sexo = sexo,
-        this.estado = estado,
-        this.cidade = cidade,
+        this.#sobrenome = sobrenome,
+        this.#sexo = sexo,
+        this.#estado = estado,
+        this.#cidade = cidade,
         this.#email = email,
         this.#senha = senha
     }
@@ -48,24 +48,27 @@ const clientes = [];
 const cadForm = document.querySelector('form#formCad');
 const cadNome = document.querySelector('input#cadNome');
 const cadSobrenome = document.querySelector('input#cadSobrenome');
-const cadSexo = document.querySelector('input#cadSexo');
+const cadSexo = document.querySelector('select#cadSexo');
 const cadEmail = document.querySelector('input#cadEmail');
 const cadSenha = document.querySelector('input#cadSenha');
 const cadConSenha = document.querySelector('input#cadConSenha');
-const cadEstado = document.querySelector('input#cadEstado');
+const cadEstado = document.querySelector('select#cadEstado');
 const cadCidade = document.querySelector('input#cadCidade');
 
 cadForm.addEventListener('submit', (e)=>{
     e.preventDefault()
 
-    alert(cadNome.value)
+    let senhaMsg = document.querySelectorAll('span.senhaMsg');
 
-    if(cadNome.value){
-        clientes.push(new Cliente(cadNome.value, cadSobrenome.value, cadSexo.value, cadEstado.value, cadCidade.value, cadEmail.value, cadSenha.value));
-    }
-
-
-    console.log(clientes[0])
+    if(cadSenha.value != cadConSenha.value){
+            senhaMsg.forEach((element)=>{
+                element.innerHTML = 'Certifique-se que a senha é a mesma em ambos os campos'
+                setTimeout(()=>{
+                    element.innerHTML = '';
+                },6000)
+            })
+            alert('entrou!')
+        }
 })
 
 //--LOGIN--
