@@ -72,3 +72,7 @@ footer {
   margin-right: 15px;
 }
 
+
+span.errorMsg{ /* style para as mensagens de erro do cadastro */
+  background-color: rgba(255, 0, 0, 0.3);
+}
