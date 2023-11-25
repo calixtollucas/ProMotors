@@ -1,18 +1,38 @@
 
 //classes
 class Cliente{
-    #nomeUsuario;
+    #nome;
+    #sobrenome;
+    #sexo
+    #estado;
+    #cidade;
     #email;
     #senha;
-    constructor(nomeUsuario, email, senha){
-        this.#nomeUsuario = nomeUsuario,
+    constructor(nome, sobrenome, sexo, estado, cidade, email, senha){
+        this.#nome = nome,
+        this.#sobrenome = sobrenome,
+        this.#sexo = sexo,
+        this.#estado = estado,
+        this.#cidade = cidade,
         this.#email = email,
         this.#senha = senha
     }
 
     //getters and setters
-    get getNomeUsuario(){
-        return this.#nomeUsuario;
+    get getNome(){
+        return this.#nome;
+    }
+    get getSobrenome(){
+        return this.#sobrenome;
+    }
+    get getSexo(){
+        return this.#sexo;
+    }
+    get getEstado(){
+        return this.#estado;
+    }
+    get getCidade(){
+        return this.#cidade;
     }
     get getEmail(){
         return this.#email;
@@ -21,22 +41,43 @@ class Cliente{
         return this.#senha;
     }
 }
-//variavéis
 const clientes = [];
-const c1 = new Cliente('Lucas','lucas@gmail.com','1234');
-const c2 = new Cliente('Arthur', 'arthur@gmail.com','5678')
-const c3 = new Cliente('Dayanne','day@gmail.com','1432');
-const c4 = new Cliente('AnnaKlara','klara@gmail.com','1234');
-const form = document.querySelector('form#formLogin');
+
+//--CADASTRO--
+//variáveis
+const cadForm = document.querySelector('form#formCad');
+const cadNome = document.querySelector('input#cadNome');
+const cadSobrenome = document.querySelector('input#cadSobrenome');
+const cadSexo = document.querySelector('select#cadSexo');
+const cadEmail = document.querySelector('input#cadEmail');
+const cadSenha = document.querySelector('input#cadSenha');
+const cadConSenha = document.querySelector('input#cadConSenha');
+const cadEstado = document.querySelector('select#cadEstado');
+const cadCidade = document.querySelector('input#cadCidade');
+
+cadForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+
+    let senhaMsg = document.querySelectorAll('span.senhaMsg');
+
+    if(cadSenha.value != cadConSenha.value){
+            senhaMsg.forEach((element)=>{
+                element.innerHTML = 'Certifique-se que a senha é a mesma em ambos os campos'
+                setTimeout(()=>{
+                    element.innerHTML = '';
+                },6000)
+            })
+            alert('entrou!')
+        }
+})
+
+//--LOGIN--
+//variavéis
+const formLog = document.querySelector('form#formLogin');
 const nomeUsuario = document.getElementById('loginUsu');
 const senhaUsuario = document.getElementById('loginSenha');
 
-clientes.push(c1);
-clientes.push(c2);
-clientes.push(c3);
-clientes.push(c4);
-
-form.addEventListener('submit', e =>{
+formLog.addEventListener('submit', e =>{
     e.preventDefault();
     let nomeValue = nomeUsuario.value;
     let senhaValue = senhaUsuario.value;
