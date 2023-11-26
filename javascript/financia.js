@@ -2,6 +2,6 @@
     imgFinanc.src = localStorage.getItem('selectedCar')
 
     document.getElementById('formFinanc').addEventListener('submit',(e)=>{
-        e.preventDefault()
+        e.preventDefault();
         window.location.href = 'agradece.html'
     })

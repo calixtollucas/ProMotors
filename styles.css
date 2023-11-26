@@ -76,3 +76,11 @@ footer {
 span.errorMsg{ /* style para as mensagens de erro do cadastro */
   background-color: rgba(255, 0, 0, 0.3);
 }
+
+.cardInfo{
+  transition: 0.3s;
+}
+
+.carInfo:hover{
+  transform: scale(1.05);
+}

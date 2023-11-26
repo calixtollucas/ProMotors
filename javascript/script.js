@@ -17,28 +17,6 @@ class Cliente{
         this.senha = senha
     }
 
-    //getters and setters
-    // get getNome(){
-    //     return this.#nome;
-    // }
-    // get getSobrenome(){
-    //     return this.#sobrenome;
-    // }
-    // get getSexo(){
-    //     return this.#sexo;
-    // }
-    // get getEstado(){
-    //     return this.#estado;
-    // }
-    // get getCidade(){
-    //     return this.#cidade;
-    // }
-    // get getEmail(){
-    //     return this.#email;
-    // }
-    // get getSenha(){
-    //     return this.#senha;
-    // }
 }
 const clientes = [];
 let clienteLogado;
@@ -95,7 +73,6 @@ if(cadForm){
             
             window.location.href = 'login.html';
         }
-
     })
 }
 
