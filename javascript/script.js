@@ -18,7 +18,11 @@ class Cliente{
     }
 
 }
-const clientes = [];
+localStorage.removeItem('users')
+if(localStorage.getItem('users')===null){
+    let clientess = []
+    localStorage.setItem('users',JSON.stringify(clientess));
+}
 let clienteLogado;
 
 //--CADASTRO--
@@ -65,13 +69,11 @@ if(cadForm){
     cadForm.addEventListener('submit', (e)=>{
         e.preventDefault()
 
-        if(validation()){
-            alert('Cadastrado!');
-            clientes.push(new Cliente(cadNome.value, cadSobrenome.value, cadSexo.value, cadEstado.value, cadCidade.value, cadEmail.value, cadSenha.value))
-            console.log(clientes);
-            localStorage.setItem('users',JSON.stringify(clientes));
+        if(validation()){ //validation()
+
+            let clientes = localStorage.getItem('users');
             
-            window.location.href = 'login.html';
+            //window.location.href = 'login.html';
         }
     })
 }

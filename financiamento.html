@@ -34,8 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link" href="catalogo.html">Catálogo</a>
-            <a class="nav-link" href="#">Financiamentos</a>
-            <a class="nav-link" href="#">Contatos</a>
+            <a class="nav-link" href="contatos.html">Contatos</a>
             <a href="login.html" class="nav-link">Login</a>
           </div>
        </div>
@@ -65,19 +64,19 @@
                 <h4>Dados de contato</h4>
                 <form id="formFinanc" class="row" action="">
                     <div class="col-12">
-                        <label for="" class="form-label"><h6>Nome Completo*</h6></label>
-                        <input class="form-control" type="text">
+                        <label for="finNome" class="form-label"><h6>Nome Completo*</h6></label>
+                        <input required aria-describedby="finNome" id="finNome" class="form-control" type="text">
                     </div>
                     <div class="col-6">
-                        <label for="" class="form-label"><h6>CPF*</h6></label>
-                        <input class="form-control" type="text">
+                        <label for="finCPF" class="form-label"><h6>CPF*</h6></label>
+                        <input required aria-describedby="finCPF" id="finCPF" class="form-control" type="text">
                     </div>
                     <div class="col-6">
-                        <label for="" class="form-label" ><h6>Telefone celular*</h6></label>
-                        <input class="form-control" type="text" placeholder="(xx) xxxxx-xxxx">
+                        <label for="finTel" class="form-label" ><h6>Telefone celular*</h6></label>
+                        <input required aria-describedby="finTel" id="finTel" class="form-control" type="text" placeholder="(xx) xxxxx-xxxx">
                     </div>
                     <div class="col-6 m-2">
-                        <input type="checkbox" name="" id="" class="m-2">Eu autorizo o uso dos meus dados pessoais para que a empresa possa entrar em contato
+                        <input required aria-describedby="finCheck" id="finCheck" type="checkbox" name="" id="" class="m-2">Eu autorizo o uso dos meus dados pessoais para que a empresa possa entrar em contato
                     </div>
                     <button class="btn btn-dark">Enviar</button>
                 </form>
@@ -89,9 +88,8 @@
   <footer>
     <p>ProMotors 2023 - Todos os direitos reservados.</p>
     <p>Entre em contato pelo e-mail "promotorsbrasil@gmail.com".</p>
-     <a href="#"><button class="buttonfooter">Catálogo</button></a>
-     <a href="#"><button class="buttonfooter">Financiamentos</button></a>
-     <a href="#"><button class="buttonfooter">Contatos</button></a>
+     <a href="catalogo.html"><button class="buttonfooter">Catálogo</button></a>
+     <a href="contatos.html"><button class="buttonfooter">Contatos</button></a>
  </footer>
 
  <script src="javascript/financia.js" onclick="agradece"></script>
