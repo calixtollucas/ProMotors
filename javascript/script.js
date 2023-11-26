@@ -18,8 +18,11 @@ class Cliente{
     }
 
 }
-localStorage.removeItem('users')
-if(localStorage.getItem('users')===null){
+if(sessionStorage.getItem('usuLogado') === null){
+    sessionStorage.setItem('usuLogado', "")
+}
+
+if(localStorage.getItem('users')=== null){
     let clientess = []
     localStorage.setItem('users',JSON.stringify(clientess));
 }
@@ -72,8 +75,12 @@ if(cadForm){
         if(validation()){ //validation()
 
             let clientes = localStorage.getItem('users');
-            
-            //window.location.href = 'login.html';
+            let clientesP = JSON.parse(clientes);
+            alert('Cadastrado com sucesso!');
+            clientesP.push(new Cliente(cadNome.value, cadSobrenome.value, cadSexo.value, cadEstado.value, cadCidade.value, cadEmail.value, cadSenha.value))
+            localStorage.setItem('users', JSON.stringify(clientesP))
+                        
+            window.location.href = 'login.html';
         }
     })
 }
@@ -85,6 +92,8 @@ const formLog = document.querySelector('form#formLogin');
 const nomeUsuario = document.getElementById('loginUsu');
 const senhaUsuario = document.getElementById('loginSenha');
 
+
+
 if(formLog){
     formLog.addEventListener('submit', e =>{
         e.preventDefault();
@@ -95,9 +104,9 @@ if(formLog){
             
             if(nomeValue == element.nome && senhaValue == element.senha){
                 clienteLogado = element;
-                localStorage.setItem('usuLogado', JSON.stringify(clienteLogado))
+                sessionStorage.setItem('usuLogado', JSON.stringify(clienteLogado));
                 alert('Logado com sucesso!');
-                window.location.href = 'catalogo.html'
+                window.location.href = 'catalogo.html';
                 return;
             } else {
                 document.querySelector('span#loginMsg').innerHTML = 'Usuário não encontrado ou você não digitou os dados corretamente, tente novamente ou crie uma conta.'
@@ -114,6 +123,11 @@ if(formLog){
 //FINANCIAMENTO
 
 function selFinanc(src){
+    if(sessionStorage.getItem('usuLogado') == ""){
+        alert('você precisa estar logado para fazer um financiamento');
+        window.location.href = 'login.html'
+        return;
+    }
     localStorage.setItem('selectedCar', src)
-    window.location.href = 'financiamento.html'
+    window.location.href = 'financiamento.html';
 }
