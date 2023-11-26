@@ -11,7 +11,7 @@
  
    <!-- Bootstrap-->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="styles.css">
  
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
  
@@ -22,8 +22,6 @@
   <title>Catálogo - ProMotors</title>
 </head>
 <body>
-  
-  <script src="js/scripts.js"></script>
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -35,9 +33,10 @@
       <div class="alinhamento">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="#">Catálogo</a>
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
             <a class="nav-link" href="#">Financiamentos</a>
             <a class="nav-link" href="#">Contatos</a>
+            <a href="login.html" class="nav-link">Login</a>
           </div>
        </div>
       </div>
@@ -56,7 +55,7 @@
     <div class="col-4">
       <div id="list-example" class="list-group">
         <a class="list-group-item list-group-item-action" href="#list-item-1">SUVs</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-2">Conversíveis</a>
         <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
         <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
       </div>
@@ -64,21 +63,48 @@
     <div class="col-8">
       <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
         <h4 id="list-item-1" class="fontecorpo">HUMMER HX</h4>
-        <img src="images/SUV1.png" alt="SUV1" style="width: 350px;">
+        <img src="images/SUV11.png" alt="HUMMER HX" style="width: 350px;">
         <p class="fontecorpo2">O HX é menor que um H3, mede 4,34 metros de comprimento, possui só duas portas e seus painéis do teto, pára-lamas e portas são removíveis. Ainda assim, ele traz elementos típicos da marca, como faróis circulares em molduras quadradas, pára-brisa reto e vertical e tomadas de ar no capô.
 
         A suspensão é independente nas quatro rodas e na dianteira, ele conta com uma barra estabilizadora desconectável eletronicamente, para reforçar a resistência na lama. O eixo traseiro conta com braços deslizantes controlados por computador.</p>
-
+        
+        <button id="btnFinanciar" class="btn btn-dark" onclick="selFinanc('images/SUV11.png')">Quero financiar</button>
         <br>
 
         <h4 id="list-item-1" class="fontecorpo">FORD F150 RAPTOR</h4>
-        <img src="images/SUV2.png" alt="SUV1" style="width: 350px;">
+        <img src="images/FORDRAPTOR.png" alt="FORD F150 RAPTOR" style="width: 350px;">
         <p class="fontecorpo2">A Ford F-150 Raptor é uma picape de alto desempenho fabricada pela Ford, conhecida por suas capacidades off-road impressionantes e design robusto. A primeira geração foi introduzida em 2010, e desde então a Raptor tem se destacado como uma opção popular para entusiastas de veículos off-road e amantes de picapes de alta performance.
 
         A característica mais marcante da F-150 Raptor é sua capacidade de lidar com terrenos off-road difíceis. Ela possui um sistema de suspensão especializado, com amortecedores de alta performance e um conjunto de molas projetado para absorver impactos em terrenos acidentados. Além disso, possui pneus todo-terreno robustos e uma carroceria reforçada para resistir às condições adversas.</p>
+        <button id="btnFinanciar" class="btn btn-dark" onclick="selFinanc('images/FORDRAPTOR.png')">Quero financiar</button>
+        <br>
 
-        <h4 id="list-item-2">Item 2</h4>
-        <p>...</p>
+        <h4 id="list-item-2">MINI Cooper S Cabrio</h4>
+        <img src="images/MINICOOPER.png" alt="MINI Cooper S Cabrio" style="width: 350px;">
+        <p class="fontecorpo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto laboriosam accusamus eum libero, magni, nostrum, natus molestiae amet illum suscipit fuga atque mollitia totam sapiente tempora et magnam officiis consectetur.
+          Quos alias harum perferendis ipsam, magnam perspiciatis modi quo pariatur corrupti. Laborum quis necessitatibus dignissimos perferendis nobis impedit, minima officia repellat animi aperiam dicta dolores illo, maxime, velit quo odio?</p>
+        
+        <button id="btnFinanciar" class="btn btn-dark" onclick="selFinanc('images/MINICOOPER.png')">Quero financiar</button>
+        <br>
+
+
+        <h4 id="list-item-2">BMW 430i Cabrio Sport</h4>
+        <img src="images/BMWCABRIO.png" alt="BMW 430i Cabrio Sport" style="width: 350px;">
+        <p class="fontecorpo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto laboriosam accusamus eum libero, magni, nostrum, natus molestiae amet illum suscipit fuga atque mollitia totam sapiente tempora et magnam officiis consectetur.
+          Quos alias harum perferendis ipsam, magnam perspiciatis modi quo pariatur corrupti. Laborum quis necessitatibus dignissimos perferendis nobis impedit, minima officia repellat animi aperiam dicta dolores illo, maxime, velit quo odio?</p>
+        <button id="btnFinanciar" class="btn btn-dark" onclick="selFinanc('images/BMWCABRIO.png')">Quero financiar</button>
+        <br>
+
+
+        <h4 id="list-item-2">Chevrolet Camaro Conversível</h4>
+        <img src="images/CAMAROCONVERSIVEL.png" alt="Chevrolet Camaro Conversível" style="width: 350px;">
+        <p class="fontecorpo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto laboriosam accusamus eum libero, magni, nostrum, natus molestiae amet illum suscipit fuga atque mollitia totam sapiente tempora et magnam officiis consectetur.
+        Quos alias harum perferendis ipsam, magnam perspiciatis modi quo pariatur corrupti. Laborum quis necessitatibus dignissimos perferendis nobis impedit, minima officia repellat animi aperiam dicta dolores illo, maxime, velit quo odio?</p>
+        
+        <button id="btnFinanciar" class="btn btn-dark" onclick="selFinanc('images/CAMAROCONVERSIVEL.png')">Quero financiar</button>
+        <br>
+        
+
         <h4 id="list-item-3">Item 3</h4>
         <p>...</p>
         <h4 id="list-item-4">Item 4</h4>
@@ -88,5 +114,14 @@
   </div>
 </div>
 
+  <footer>
+    <p>ProMotors 2023 - Todos os direitos reservados.</p>
+    <p>Entre em contato pelo e-mail "promotorsbrasil@gmail.com".</p>
+    <a href="#"><button class="buttonfooter">Catálogo</button></a>
+    <a href="#"><button class="buttonfooter">Financiamentos</button></a>
+    <a href="#"><button class="buttonfooter">Contatos</button></a>
+  </footer>
+
+  <script src="javascript/script.js"></script>
 </body>
 </html>

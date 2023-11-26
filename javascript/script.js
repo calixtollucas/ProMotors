@@ -130,3 +130,11 @@ if(formLog){
         })
     })
 }
+
+
+//FINANCIAMENTO
+
+function selFinanc(src){
+    localStorage.setItem('selectedCar', src)
+    window.location.href = 'financiamento.html'
+}
