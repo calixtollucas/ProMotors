@@ -1,5 +1,5 @@
 //CLASSES
-class Cliente{
+class Cliente{ // Classe que representa os clientes
     nome;
     sobrenome;
     sexo
@@ -69,7 +69,7 @@ function validation(){
 }
 
 if(cadForm){
-    cadForm.addEventListener('submit', (e)=>{
+    cadForm.addEventListener('submit', (e)=>{ // função que é executada pós clicar em criar conta
         e.preventDefault()
 
         if(validation()){ //validation()
